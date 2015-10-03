@@ -1,0 +1,6 @@
+%h3= t(:transactions_new_title)
+
+= simple_form_for(@transaction, html: { novalidate: true}) do |f|
+  = f.input :description
+  = f.input :amount
+  = f.submit

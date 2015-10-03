@@ -1,0 +1,43 @@
+@mixin button-styles($color){
+  color: #fff;
+  background-color: $color;
+  box-shadow: 0 3px 0 0 darken($color, 15%);
+  border-radius: 3px;
+  &:hover {
+    background-color: darken($color, 10%);
+    color: #fff; 
+  }
+  &:active {
+    background-color: darken($color, 20%);
+  }
+  &:focus {
+    background-color: darken($color, 20%);
+  }
+}
+
+a.btn {
+  text-decoration: none;
+}
+
+.btn {
+  display: inline-block;
+  font-weight: 700;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+   user-select: none;
+   background-image: none;
+   border: 1px solid transparent;
+   padding: 10px;
+}
+
+.btn-primary {
+  @include button-styles($grey-x-light);
+}
+
+
