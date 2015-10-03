@@ -1,0 +1,17 @@
+%h1 Alle transacties
+
+%h2= @account.name
+= link_to "New transaction", new_account_transaction_path(@account), class: 'btn btn-primary'
+
+- @transactions.each do |t|
+  %p 
+    = t.description + ":"
+    %strong= t.amount
+    = link_to "delete", account_transaction_path(t.account, t), method: :delete, data: { confirm: "Weet je het zeker?" } 
+
+%h2 balance
+%h3= @account.balance
+
+
+
+%h3= link_to "Back", accounts_path

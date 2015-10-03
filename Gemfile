@@ -36,6 +36,10 @@ gem 'capistrano', '~> 3.3.5'
 gem 'capistrano-rails', '~> 1.1.2'
 gem 'figaro'
 
+group :development do
+  gem "better_errors" 
+end
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

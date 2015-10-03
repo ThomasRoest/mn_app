@@ -1,0 +1,5 @@
+%h1= t(:accounts_new_title)
+
+= simple_form_for(@account, html: { novalidate: true}) do |f|
+  = f.input :name
+  = f.submit

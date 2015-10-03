@@ -1,0 +1,8 @@
+%h1 Accounts#index
+
+= link_to "new account", new_account_path, class: "btn btn-primary"
+
+- @accounts.each do |account|
+  %p
+    = link_to account.name, account
+    = link_to "delete", account, method: :delete, data: { confirm: "weet je het zeker?"}

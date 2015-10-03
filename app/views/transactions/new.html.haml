@@ -1,6 +1,6 @@
-%h3= t(:transactions_new_title)
+%h1= t(:transactions_new_title)
 
-= simple_form_for(@transaction, html: { novalidate: true}) do |f|
+= simple_form_for @transaction, url: account_transactions_path do |f|
   = f.input :description
   = f.input :amount
   = f.submit
