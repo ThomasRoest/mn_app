@@ -5,6 +5,13 @@ class Transaction < ActiveRecord::Base
   after_save :update_account_balance!
   after_destroy :update_account_balance!
 
+  scope :debit, -> { where(transaction_type: "debit") }
+  scope :credit, -> { where(transaction_type: "credit") } 
+
+
+
+
+
   #through associations
   def update_account_balance!
     account.update_balance!
