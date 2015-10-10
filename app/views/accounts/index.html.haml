@@ -1,6 +1,6 @@
-%h1= t("accounts_index_title")
+%h1= t("accounts_index_heading")
 
-= link_to "new account", new_account_path, class: "btn btn-primary"
+= link_to t("accounts_index_new"), new_account_path, class: "btn btn-primary"
 
 - @accounts.each do |account|
   %p

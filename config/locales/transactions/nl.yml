@@ -1,2 +1,5 @@
 nl:
-  test:
+  transactions_amount: bedrag
+  transactions_type: type
+  transactions_fixed: maandelijks
+  transactions_new_heading: Nieuwe transactie

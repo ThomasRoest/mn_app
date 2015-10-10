@@ -1,17 +1,19 @@
-%h1 Alle transacties
+%h1= t('accounts_show_heading')
 
 %h2= @account.name
-= link_to "New transaction", new_account_transaction_path(@account), class: 'btn btn-primary'
+= link_to t('accounts_show_new'), new_account_transaction_path(@account), class: 'btn btn-primary'
+
+%h4= t('accounts_show_fixed')
 
 - @transactions.debit.fixed.each do |t|
   %p.highlight__debit 
     = t.description
-    %strong amount:
+    %strong= t('transactions_amount')
     %span= t.amount
-    %strong type: 
+    %strong= t('transactions_type') 
     %span= t.transaction_type
-    %strong fixed: 
-    %span= t.fixed_transaction
+    / %strong= t('transactions_fixed')
+    / %span= t.fixed_transaction
     = link_to "edit", edit_account_transaction_path(t.account, t)
     = link_to "delete", account_transaction_path(t.account, t), method: :delete, data: { confirm: "Weet je het zeker?" } 
 
@@ -27,7 +29,7 @@
     = link_to "edit", edit_account_transaction_path(t.account, t)
     = link_to "delete", account_transaction_path(t.account, t), method: :delete, data: { confirm: "Weet je het zeker?" } 
 
-%hr
+%h4= t('accounts_show_variable')
 
 - @transactions.debit.variable.each do |t|
   %p.highlight__debit 
@@ -53,6 +55,7 @@
     = link_to "edit", edit_account_transaction_path(t.account, t)
     = link_to "delete", account_transaction_path(t.account, t), method: :delete, data: { confirm: "Weet je het zeker?" } 
 
+%h2= t('accounts_show_balance')
 %h2= @account.balance
 
-%h3= link_to "Back", accounts_path
+%h3= link_to t('accounts_show_back'), accounts_path
