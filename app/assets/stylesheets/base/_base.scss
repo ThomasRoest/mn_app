@@ -40,6 +40,14 @@ input[type="submit"] {
   padding: 0.8em;
 }
 
+input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+form {
+  padding: 10px;
+}
+
 textarea:focus,
 select:focus,
 input[type="email"]:focus,

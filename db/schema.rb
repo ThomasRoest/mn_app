@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151008192841) do
+ActiveRecord::Schema.define(version: 20151010071833) do
 
   create_table "accounts", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20151008192841) do
     t.string   "description",      limit: 255
     t.integer  "account_id",       limit: 4
     t.string   "transaction_type", limit: 255
+    t.boolean  "each_month",       limit: 1
   end
 
 end

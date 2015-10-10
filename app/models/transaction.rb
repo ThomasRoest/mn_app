@@ -2,6 +2,7 @@ class Transaction < ActiveRecord::Base
   belongs_to :account
   validates :description, presence: true
   validates :amount, presence: true
+  validates :transaction_type, presence: true
   after_save :update_account_balance!
   after_destroy :update_account_balance!
 
