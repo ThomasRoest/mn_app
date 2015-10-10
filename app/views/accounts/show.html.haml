@@ -3,10 +3,8 @@
 %h2= @account.name
 = link_to t('accounts_show_new'), new_account_transaction_path(@account), class: 'btn btn-primary'
 
-%h4= t('accounts_show_fixed')
-
 %table
-  %th= t('transactions_description')
+  %th= t('transactions_fixed')
   %th= t('transactions_amount')
   %th= t('transactions_type')
   - @transactions.debit.fixed.each do |t|
@@ -17,10 +15,8 @@
     %tr.highlight__credit 
       = render 'transaction_fields', transaction: t
 
-%h4= t('accounts_show_variable')
-
 %table
-  %th= t('transactions_description')
+  %th= t('transactions_variable')
   %th= t('transactions_amount')
   %th= t('transactions_type')
   - @transactions.debit.variable.each do |t|

@@ -2,5 +2,6 @@ nl:
   transactions_description: Omschrijving
   transactions_amount: bedrag
   transactions_type: type
-  transactions_fixed: maandelijks
+  transactions_fixed: maandelijkse transacties
+  transactions_variable: variable transacties
   transactions_new_heading: Nieuwe transactie
