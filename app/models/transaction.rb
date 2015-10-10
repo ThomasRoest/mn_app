@@ -7,10 +7,9 @@ class Transaction < ActiveRecord::Base
   after_destroy :update_account_balance!
 
   scope :debit, -> { where(transaction_type: "debit") }
-  scope :credit, -> { where(transaction_type: "credit") } 
-
-
-
+  scope :credit, -> { where(transaction_type: "credit") }
+  scope :fixed, -> { where(fixed_transaction: true) } 
+  scope :variable, -> { where(fixed_transaction: false ) }
 
 
   #through associations

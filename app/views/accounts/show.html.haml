@@ -3,23 +3,56 @@
 %h2= @account.name
 = link_to "New transaction", new_account_transaction_path(@account), class: 'btn btn-primary'
 
-- @transactions.debit.each do |t|
-  %p 
-    = t.description + ": "
-    %strong= t.amount
+- @transactions.debit.fixed.each do |t|
+  %p.highlight__debit 
+    = t.description
+    %strong amount:
+    %span= t.amount
+    %strong type: 
     %span= t.transaction_type
+    %strong fixed: 
+    %span= t.fixed_transaction
     = link_to "edit", edit_account_transaction_path(t.account, t)
     = link_to "delete", account_transaction_path(t.account, t), method: :delete, data: { confirm: "Weet je het zeker?" } 
 
-- @transactions.credit.each do |t|
-  %p
-    = t.description + ": "
-    %strong= t.amount
+- @transactions.credit.fixed.each do |t|
+  %p.highlight__credit 
+    = t.description
+    %strong amount:
+    %span= t.amount
+    %strong type: 
     %span= t.transaction_type
+    %strong fixed: 
+    %span= t.fixed_transaction
     = link_to "edit", edit_account_transaction_path(t.account, t)
     = link_to "delete", account_transaction_path(t.account, t), method: :delete, data: { confirm: "Weet je het zeker?" } 
 
-%h2 balance
-%h3= @account.balance
+%hr
+
+- @transactions.debit.variable.each do |t|
+  %p.highlight__debit 
+    = t.description
+    %strong amount:
+    %span= t.amount
+    %strong type: 
+    %span= t.transaction_type
+    %strong fixed: 
+    %span= t.fixed_transaction
+    = link_to "edit", edit_account_transaction_path(t.account, t)
+    = link_to "delete", account_transaction_path(t.account, t), method: :delete, data: { confirm: "Weet je het zeker?" } 
+
+- @transactions.credit.variable.each do |t|
+  %p.highlight__credit
+    = t.description
+    %strong amount:
+    %span= t.amount
+    %strong type: 
+    %span= t.transaction_type
+    %strong fixed: 
+    %span= t.fixed_transaction
+    = link_to "edit", edit_account_transaction_path(t.account, t)
+    = link_to "delete", account_transaction_path(t.account, t), method: :delete, data: { confirm: "Weet je het zeker?" } 
+
+%h2= @account.balance
 
 %h3= link_to "Back", accounts_path

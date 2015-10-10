@@ -1,0 +1,14 @@
+%highlight-shared {
+  padding: 10px;
+  margin: 0px;
+}
+
+.highlight__debit {
+  background-color: $alert-success;
+  @extend %highlight-shared;
+}
+
+.highlight__credit {
+  background-color: $alert-error;
+  @extend %highlight-shared;
+}
