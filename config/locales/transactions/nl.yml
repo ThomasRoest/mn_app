@@ -1,4 +1,5 @@
 nl:
+  transactions_description: Omschrijving
   transactions_amount: bedrag
   transactions_type: type
   transactions_fixed: maandelijks

@@ -67,3 +67,15 @@ img {
   height: auto;
 }
 
+
+th, td {
+  padding: 10px;
+}
+
+th {
+   text-transform: uppercase;
+   letter-spacing: 0.1em;
+   font-size: 80%;
+   text-align: left;
+   width: 100%;
+}

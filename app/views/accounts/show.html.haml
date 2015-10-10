@@ -5,55 +5,31 @@
 
 %h4= t('accounts_show_fixed')
 
-- @transactions.debit.fixed.each do |t|
-  %p.highlight__debit 
-    = t.description
-    %strong= t('transactions_amount')
-    %span= t.amount
-    %strong= t('transactions_type') 
-    %span= t.transaction_type
-    / %strong= t('transactions_fixed')
-    / %span= t.fixed_transaction
-    = link_to "edit", edit_account_transaction_path(t.account, t)
-    = link_to "delete", account_transaction_path(t.account, t), method: :delete, data: { confirm: "Weet je het zeker?" } 
-
-- @transactions.credit.fixed.each do |t|
-  %p.highlight__credit 
-    = t.description
-    %strong amount:
-    %span= t.amount
-    %strong type: 
-    %span= t.transaction_type
-    %strong fixed: 
-    %span= t.fixed_transaction
-    = link_to "edit", edit_account_transaction_path(t.account, t)
-    = link_to "delete", account_transaction_path(t.account, t), method: :delete, data: { confirm: "Weet je het zeker?" } 
+%table
+  %th= t('transactions_description')
+  %th= t('transactions_amount')
+  %th= t('transactions_type')
+  - @transactions.debit.fixed.each do |t|
+    %tr.highlight__debit
+      = render 'transaction_fields', transaction: t 
+   
+  - @transactions.credit.fixed.each do |t|
+    %tr.highlight__credit 
+      = render 'transaction_fields', transaction: t
 
 %h4= t('accounts_show_variable')
 
-- @transactions.debit.variable.each do |t|
-  %p.highlight__debit 
-    = t.description
-    %strong amount:
-    %span= t.amount
-    %strong type: 
-    %span= t.transaction_type
-    %strong fixed: 
-    %span= t.fixed_transaction
-    = link_to "edit", edit_account_transaction_path(t.account, t)
-    = link_to "delete", account_transaction_path(t.account, t), method: :delete, data: { confirm: "Weet je het zeker?" } 
+%table
+  %th= t('transactions_description')
+  %th= t('transactions_amount')
+  %th= t('transactions_type')
+  - @transactions.debit.variable.each do |t|
+    %tr.highlight__debit 
+      = render 'transaction_fields', transaction: t
 
-- @transactions.credit.variable.each do |t|
-  %p.highlight__credit
-    = t.description
-    %strong amount:
-    %span= t.amount
-    %strong type: 
-    %span= t.transaction_type
-    %strong fixed: 
-    %span= t.fixed_transaction
-    = link_to "edit", edit_account_transaction_path(t.account, t)
-    = link_to "delete", account_transaction_path(t.account, t), method: :delete, data: { confirm: "Weet je het zeker?" } 
+  - @transactions.credit.variable.each do |t|
+    %tr.highlight__credit
+      = render 'transaction_fields', transaction: t
 
 %h2= t('accounts_show_balance')
 %h2= @account.balance
