@@ -26,8 +26,8 @@
   - @transactions.credit.variable.each do |t|
     %tr.highlight__credit
       = render 'transaction_fields', transaction: t
-    %tr.highlight__balance
-      %th= t('accounts_show_balance')
-      %th= @account.balance
+  %tr.highlight__balance
+    %th= t('accounts_show_balance')
+    %th= @account.balance
 
 %h3= link_to t('accounts_show_back'), accounts_path
