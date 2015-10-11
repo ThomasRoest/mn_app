@@ -1,7 +1,7 @@
-%td= transaction.description
+%td= link_to transaction.description, account_transaction_path(transaction.account, transaction)
 %td= transaction.amount
 %td= transaction.transaction_type
 / %strong= t('transactions_fixed')
 / %span= t.fixed_transaction
-%td= link_to "edit", edit_account_transaction_path(transaction.account, transaction)
-%td= link_to "delete", account_transaction_path(transaction.account, transaction), method: :delete, data: { confirm: "Weet je het zeker?" } 
+-#%td= link_to "edit", edit_account_transaction_path(transaction.account, transaction)
+-#%td= link_to "delete", account_transaction_path(transaction.account, transaction), method: :delete, data: { confirm: "Weet je het zeker?" } 

@@ -6,6 +6,10 @@ class TransactionsController < ApplicationController
      @transaction = @account.transactions.build
   end
 
+  def show
+    @transaction = @account.transactions.find(params[:id])
+  end
+
    def create
     @transaction = @account.transactions.build(transaction_params)
     if @transaction.save
