@@ -1,0 +1,6 @@
+%ul
+  %li= @transaction.description
+  %li= @transaction.amount
+  %li= @transaction.transaction_type
+  %li= link_to "edit", edit_account_transaction_path(@transaction.account, @transaction)
+  %td= link_to "delete", account_transaction_path(@transaction.account, @transaction), method: :delete, data: { confirm: "Weet je het zeker?" } 
