@@ -12,3 +12,7 @@
   background-color: $alert-error;
   @extend %highlight-shared;
 }
+
+.highlight__balance {
+  padding-top: 20px;
+}

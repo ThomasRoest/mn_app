@@ -1,8 +1,6 @@
 %td= transaction.description
-%td
-  = transaction.amount
-%td
-  = transaction.transaction_type
+%td= transaction.amount
+%td= transaction.transaction_type
 / %strong= t('transactions_fixed')
 / %span= t.fixed_transaction
 %td= link_to "edit", edit_account_transaction_path(transaction.account, transaction)
